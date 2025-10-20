@@ -1,0 +1,679 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="./src/img/panda.png">
+
+<!-- Title -->
+<title>MoGA</title>
+<link href="./src/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="./src/css/bulma.min.css">
+<link rel="stylesheet" href="./src/css/bulma-carousel.min.css">
+<link rel="stylesheet" href="./src/css/index.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="./src/js/bulma-carousel.min.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="./src/js/index.js"></script>
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>
+</head>
+
+<!-- Author -->
+<body class="hero-active">
+
+
+<!-- Hero Video Background removed -->
+
+<div class="header-content" style="position: relative; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; overflow: visible; margin: 0; padding: 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); border-radius: 0; box-shadow: none;">
+  <!-- Background videos for the header (rotating) -->
+  <div class="intro-video-container" style="position: fixed; top: -1px; left: 0; width: 100vw; height: calc(100vh + 2px); z-index: -10; transition: opacity 0.5s ease; overflow: hidden;">
+    
+    <video autoplay muted loop playsinline class="intro-bg-video active" id="introBgVideo1" style="position: absolute; top: -1px; left: 0; width: 100vw; height: calc(100vh + 2px); object-fit: cover; opacity: 1; transition: opacity 1s ease; filter: brightness(1.2);">
+      <source src="./src/videos/MoGA_video/30s_video/30s_case1.mp4" type="video/mp4">
+    </video>
+    <!-- Light overlay for better text visibility -->
+    <div style="position: absolute; top: -1px; left: 0; width: 100vw; height: calc(100vh + 2px); background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
+  </div>
+
+  <!-- Decorative elements -->
+  <div class="header-decoration top-left"></div>
+  <div class="header-decoration bottom-right"></div>
+
+  <!-- Ultra cool animated title -->
+  <div class="epic-title-container" style="position: relative; display: inline-block; margin: 20px 0;">
+    <!-- Glowing particles background effect -->
+    <div class="particles-bg" style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; pointer-events: none; z-index: 0;">
+      <div style="position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, #fff, transparent); border-radius: 50%; animation: float-particle 10s infinite linear; top: 20%; left: 10%;"></div>
+      <div style="position: absolute; width: 3px; height: 3px; background: radial-gradient(circle, #27d8fe, transparent); border-radius: 50%; animation: float-particle 8s infinite linear reverse; top: 60%; left: 80%;"></div>
+      <div style="position: absolute; width: 5px; height: 5px; background: radial-gradient(circle, #f32f61, transparent); border-radius: 50%; animation: float-particle 12s infinite linear; top: 70%; left: 30%;"></div>
+      <div style="position: absolute; width: 3px; height: 3px; background: radial-gradient(circle, #3ef879, transparent); border-radius: 50%; animation: float-particle 9s infinite linear reverse; top: 30%; left: 70%;"></div>
+    </div>
+
+    <h1 class="modern-title" style="position: relative; z-index: 1; font-size: 120px; font-weight: 900; letter-spacing: 15px; margin: 0; font-family: 'Orbitron', 'Arial Black', sans-serif;">
+      <span class="mega-letter" data-letter="M" style="
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: letter-appear 0.5s ease forwards, letter-float 6s ease-in-out infinite 2.5s;
+        animation-delay: 0s, 2.5s;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+      ">M</span><span class="mega-letter" data-letter="o" style="
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: letter-appear 0.5s ease forwards, letter-float 6s ease-in-out infinite 3s;
+        animation-delay: 0.5s, 3s;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+      ">o</span><span class="mega-letter" data-letter="G" style="
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: letter-appear 0.5s ease forwards, letter-float 6s ease-in-out infinite 3.5s;
+        animation-delay: 1s, 3.5s;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+      ">G</span><span class="mega-letter" data-letter="A" style="
+        display: inline-block;
+        position: relative;
+        background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        opacity: 0;
+        animation: letter-appear 0.5s ease forwards, letter-float 6s ease-in-out infinite 4s;
+        animation-delay: 1.5s, 4s;
+        transform-style: preserve-3d;
+        transition: all 0.3s ease;
+      ">A</span>
+    </h1>
+
+    <!-- Lightning effect overlay -->
+    <div class="lightning-effect" style="
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #fff, transparent);
+      transform: translateY(-50%);
+      opacity: 0;
+      animation: lightning-strike 4s infinite;
+      pointer-events: none;
+    "></div>
+  </div>
+
+  <!-- Add keyframe animations -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+
+    @keyframes letter-appear {
+      0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+      }
+      50% {
+        transform: translateY(-5px) scale(1.1);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes letter-float {
+      0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+      25% { transform: translateY(-10px) rotateX(5deg) rotateY(-5deg); }
+      50% { transform: translateY(-5px) rotateX(-5deg) rotateY(5deg); }
+      75% { transform: translateY(-15px) rotateX(5deg) rotateY(5deg); }
+    }
+
+    @keyframes spin-letter {
+      0% { transform: rotateZ(0deg); }
+      100% { transform: rotateZ(360deg); }
+    }
+
+    @keyframes lightning-strike {
+      0%, 90%, 100% { opacity: 0; transform: translateY(-50%) scaleX(0); }
+      93% { opacity: 1; transform: translateY(-50%) scaleX(1); }
+      95% { opacity: 0; transform: translateY(-50%) scaleX(1); }
+    }
+
+    @keyframes float-particle {
+      0% { transform: translate(0, 0) scale(0); opacity: 0; }
+      10% { transform: translate(10px, -10px) scale(1); opacity: 1; }
+      50% { transform: translate(-20px, -50px) scale(0.8); opacity: 0.5; }
+      90% { transform: translate(30px, -90px) scale(0.5); opacity: 0.2; }
+      100% { transform: translate(0, -100px) scale(0); opacity: 0; }
+    }
+
+    .mega-letter:hover {
+      animation-play-state: paused !important;
+      transform: scale(1.3) rotateZ(-5deg) !important;
+      cursor: pointer;
+    }
+
+    .mega-letter::before {
+      content: attr(data-letter);
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      background: inherit;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.3;
+      transform: translateZ(-5px);
+      z-index: -1;
+      filter: blur(2px);
+    }
+
+  </style>
+
+  <!-- Professional subtitle with typing effect -->
+  <p class="modern-subtitle" style="position: relative;">
+    <span id="typed-subtitle" style="border-right: 3px solid rgba(255, 255, 255, 0.8);"></span>
+  </p>
+
+  <script>
+    // Typing effect for subtitle (runs once)
+    document.addEventListener('DOMContentLoaded', () => {
+      const text = "Mixture-of-Groups Attention for End-to-End Long Video Generation";
+      const typedElement = document.getElementById('typed-subtitle');
+      let index = 0;
+
+      function typeWriter() {
+        if (!typedElement) return;
+
+        // Handle typing
+        if (index < text.length) {
+          typedElement.textContent = text.substring(0, index + 1);
+          index++;
+          setTimeout(typeWriter, 100); // Typing speed
+        }
+        // When complete, remove cursor
+        else if (index === text.length) {
+          // Remove the blinking cursor border
+          typedElement.style.borderRight = 'none';
+          typedElement.style.animation = 'none';
+        }
+      }
+
+      // Add blinking cursor animation (only while typing)
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes blink-cursor {
+          0%, 49% { border-color: rgba(255, 255, 255, 0.8); }
+          50%, 100% { border-color: transparent; }
+        }
+        #typed-subtitle {
+          animation: blink-cursor 1s infinite;
+          padding-right: 3px;
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Start typing after a short delay
+      setTimeout(typeWriter, 1000);
+    });
+  </script>
+
+  <!-- Conference -->
+  <!-- <div class="conference-top"></div> -->
+
+  <!-- Modern authors section with better spacing -->
+  <div class="authors-modern-container">
+    <div class="authors-modern-row">
+      <a href="https://scholar.google.com/citations?user=aiY4v3oAAAAJ&hl=en" class="author-modern-link">
+        <span class="author-name-modern">Weinan Jia</span> 
+      </a>
+      <a href="https://scholar.google.com/citations?hl=zh-CN&user=9YBKORgAAAAJ" class="author-modern-link">
+        <span class="author-name-modern">Yuning Lu</span>
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Mengqi Huang</span> 
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Hualiang Wang</span> 
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Binyuan Huang</span>
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Nan Chen</span>
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Mu Liu</span>
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Jidong Jiang</span>
+      </a>
+      <a href="#" class="author-modern-link">
+        <span class="author-name-modern">Zhendong Mao</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Modern institutions display -->
+  <div class="institutions-modern">
+    <div class="institution-item-modern">
+      <!-- <span class="institution-number-modern"><sup>1</sup></span> -->
+      <span class="institution-name-modern">USTC, ByteDance Fanqie</span>
+    </div>
+  </div>
+
+  <!-- Modern buttons section -->
+  <div class="buttons-modern">
+    <a target="_blank" href="https://arxiv.org/pdf/2504.09454" class="button-modern button-paper">
+      <img src="./src/img/th.png" alt="arXiv" class="button-icon arxiv-icon" style="width: 20px; height:15px;">
+      <span>arXiv</span>
+    </a>
+    <a target="_blank" href="https://github.com/jiawn-creator/MoGA" class="button-modern button-code">
+      <img src="./src/img/github.png" alt="GitHub" class="button-icon" style="width: 20px; height: 20px;">
+      <span>Code</span>
+    </a>
+    <a href="#" target="_blank" class="button-modern button-video">
+      <img src="./src/img/youtube.png" alt="YouTube" class="button-icon" style="width: 20px; height: 20px;">
+      <span>Video</span>
+    </a>
+  </div>
+
+</div>
+
+<!------------- Abstract ------------------>
+
+<div class="content">
+  <h2 style="text-align:center; color: white; background: none !important; -webkit-text-fill-color: white !important; font-size: 48px; margin-bottom: 50px; font-weight: 700; letter-spacing: 2px;">🎯 Abstract</h2>
+
+    <!-- Main Question Box -->
+    <div style="max-width: 1400px; margin: 0 auto 40px; position: relative;">
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3px; border-radius: 25px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);">
+      <div style="background: #0a0a0a; border-radius: 22px; padding: 40px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1), transparent 50%), radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1), transparent 50%); pointer-events: none;"></div>
+        
+        <h3 style="font-size: 20px; color: transparent; background: linear-gradient(90deg, #fff, #e0e0ff); -webkit-background-clip: text; background-clip: text; margin: 0 0 15px 0; font-weight: 700; position: relative;">
+          <span class="sparkle-emoji">✨</span> Do you want to generate a <span style="font-style: italic;">short film ? </span> <span class="sparkle-emoji">✨</span>
+        </h3>
+        <p style="color: white; font-size: 20px; margin: 0; position: relative;">
+          Long video generation with diffusion transformer is bottlenecked by the quadratic scaling of full attention with sequence length. 
+          Since attention is highly redundant, outputs are dominated by a small subset of query–key pairs. Existing sparse methods rely on blockwise coarse estimation, whose accuracy–efficiency trade-offs are constrained by block size. 
+          This paper introduces <span style="background: linear-gradient(90deg, #00d2ff, #3a7bd5); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;">Mixture-of-Groups Attention (MoGA)</span>, an efficient sparse attention mechanism that uses a lightweight, learnable token router to precisely match tokens without blockwise estimation. 
+          Through semantics-aware routing, MoGA enables effective long-range interactions. 
+          As a kernel-free method, MoGA integrates seamlessly with modern attention stacks, including FlashAttention and sequence parallelism. 
+          Building on MoGA, we develop an efficient long video generation model that end-to-end produces ⚡ <span style="background: linear-gradient(90deg, #ff512f, #dd2476); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"> minute-level, multi-shot, 480p videos at 24 FPS with approximately 580K context length</span>. 
+          Comprehensive experiments on various video generation tasks validate the effectiveness of our approach.
+        </p>
+       
+     
+      <div style="margin: 30px auto; max-width: 1200px; position: relative;">
+        <div style="display: flex; gap: 20px; justify-content: center;">
+          <div class="video-wrapper" style="flex: 1; max-width: 500px;">
+            <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+              <source src="./src/videos/MoGA_video/30s_video/30s_case1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p style="text-align: center; margin-top: 10px; color: white; font-size: 0.9rem;">case 1</p>
+          </div>
+          <div class="video-wrapper" style="flex: 1; max-width: 500px;">
+            <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+              <source src="./src/videos/MoGA_video/30s_video/30s_case2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <p style="text-align: center; margin-top: 10px; color: white; font-size: 0.9rem;">case 2</p>
+          </div>
+        </div>
+        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Examples</h5>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!------------- MoGA pipeline ------------------>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<div class="content" style="display: flex; flex-direction: column; align-items: center; padding: 60px 20px; width: 100%; box-sizing: border-box;"></div>
+  <h2 style="text-align:center; color: white; background: none !important; -webkit-text-fill-color: white !important; font-size: 48px; margin-bottom: 50px; font-weight: 700; letter-spacing: 2px;">✨Pipeline</h2>
+
+    <!-- Main Question Box -->
+    <div style="max-width: 1400px; margin: auto; position: relative;">
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3px; border-radius: 25px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);">
+      <div style="background: #0a0a0a; border-radius: 22px; padding: 0px; text-align: center; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1), transparent 50%), radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1), transparent 50%); pointer-events: none;"></div>
+
+      <div style="margin: auto; max-width: 1200px; position: relative; width: 100%;">
+        <div style="display: flex; gap: 20px; justify-content: center;">
+          <div class="video-wrapper" style="flex: 1; max-width: 1400px; width: 100%;">
+            <video autoplay muted loop controls style="width: 100%; height: auto; display: block;  border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+              <source src="./src/videos/MoGA_pipeline.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+
+
+<!------------- More Results ------------------>
+<div class="more-results-section" style="display: flex; flex-direction: column; align-items: center; padding: 60px 20px; width: 100%; box-sizing: border-box; margin-top: 80px;">
+  <h2 class="fancy-title" style="color: white; background: none !important; -webkit-text-fill-color: white !important; font-size: 48px; text-align: center; margin-bottom: 40px; font-weight: 700; letter-spacing: 2px;">
+    <span style="background: linear-gradient(135deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">🎬</span> More Results
+  </h2>
+
+  <!-- Main box similar to other sections -->
+  <div style="position: relative; max-width: 1800px; width: 100%; background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); padding: 40px; border-radius: 25px; border: 2px solid rgba(255, 107, 107, 0.5); box-shadow: 0 20px 60px rgba(255, 107, 107, 0.2), inset 0 0 20px rgba(78, 205, 196, 0.05); backdrop-filter: blur(10px);">
+    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #ff6b6b, #4ecdc4); padding: 8px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase;">Gallery</div>
+
+  <style>
+    /* Sparkle emoji animation */
+    .sparkle-emoji {
+      display: inline-block;
+      background: linear-gradient(45deg, #ffd700, #ffed4b, #ffc700, #ffed4b, #ffd700);
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: sparkleGradient 2s ease infinite, sparkleRotate 3s linear infinite;
+      font-size: 26px;
+      filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+    }
+
+    @keyframes sparkleGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes sparkleRotate {
+      0% { transform: rotate(0deg) scale(1); }
+      25% { transform: rotate(15deg) scale(1.2); }
+      50% { transform: rotate(0deg) scale(1); }
+      75% { transform: rotate(-15deg) scale(1.2); }
+      100% { transform: rotate(0deg) scale(1); }
+    }
+
+    .more-results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .more-results-grid .video-wrapper {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .more-results-grid .video-wrapper:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .more-results-grid .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 1400px) {
+      .more-results-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .more-results-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .more-results-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="more-results-grid">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/30s_video/30s_case3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/30s_video/30s_case4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case4.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case5.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case6.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case7.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case8.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/10s_video/10s_case9.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+<!------------- Citation ------------------>
+<div class="content" style="display: flex; flex-direction: column; align-items: center; padding: 60px 20px;">
+  <h2 style="text-align:center; color: white; background: none !important; -webkit-text-fill-color: white !important; font-size: 48px; margin-bottom: 40px; font-weight: 700; letter-spacing: 2px;">📚 Citation</h2>
+  <div style="position: relative; max-width: 1200px; width: 100%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); padding: 30px; border-radius: 20px; border: 2px solid rgba(102, 126, 234, 0.5); box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2), inset 0 0 20px rgba(102, 126, 234, 0.05); backdrop-filter: blur(10px);">
+    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #667eea, #764ba2); padding: 8px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase;">BibTeX</div>
+    <pre style="background: none; padding: 0; margin: 0; font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace; font-size: 15px; color: #e0e0e0; line-height: 1.6; text-shadow: 0 0 10px rgba(102, 126, 234, 0.3);">@article{----,
+  title   = {----},
+  author  = {----}, 
+  year    = {2025}
+  eprint       = {----},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CV},
+  note         = {arXiv preprint}
+}</pre>
+    <button onclick="navigator.clipboard.writeText('@article{----,\\n  title={----},\\n  author={----},\\n  journal={},\\n  year={2025}\\n}')" style="position: absolute; top: 20px; right: 20px; background: rgba(102, 126, 234, 0.2); border: 1px solid rgba(102, 126, 234, 0.4); color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 12px; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.background='rgba(102, 126, 234, 0.4)'" onmouseout="this.style.background='rgba(102, 126, 234, 0.2)'">📋 Copy</button>
+  </div>
+  <p style="margin-top: 30px; color: rgba(255, 255, 255, 0.7); font-size: 16px; text-align: center; max-width: 600px;">If you find our work useful in your research, please consider citing our paper.</p>
+</div>
+
+<script>
+// Hero video code removed - hero videos are no longer displayed
+
+// Intro background video rotation
+document.addEventListener('DOMContentLoaded', () => {
+  const introBgVideos = [
+    document.getElementById('introBgVideo1'),
+    document.getElementById('introBgVideo2'),
+    document.getElementById('introBgVideo3'),
+    document.getElementById('introBgVideo4'),
+    document.getElementById('introBgVideo5')
+  ];
+
+  let currentIntroBgIndex = 0;
+
+  // Track playback counts for each video
+  const videoPlayCounts = [0, 0, 0, 0, 0];
+  const videoNames = ['Video 1 (aquarium)', 'Video 2 (04.mp4)', 'Video 3 (20.mp4)', 'Video 4 (09.mp4)', 'Video 5 (08.mp4)'];
+
+  // Display playback stats in console
+  const displayPlaybackStats = () => {
+    console.clear();
+    console.log('=== Background Video Playback Stats ===');
+    console.log('Each video plays for 5 seconds before switching');
+    console.log('----------------------------------------');
+    videoPlayCounts.forEach((count, index) => {
+      const totalTime = count * 5;
+      const minutes = Math.floor(totalTime / 60);
+      const seconds = totalTime % 60;
+      console.log(`${videoNames[index]}: ${count} times (${minutes}m ${seconds}s total)`);
+    });
+    console.log('----------------------------------------');
+    const totalPlays = videoPlayCounts.reduce((a, b) => a + b, 0);
+    const totalTime = totalPlays * 5;
+    const totalMinutes = Math.floor(totalTime / 60);
+    const totalSeconds = totalTime % 60;
+    console.log(`Total rotations: ${totalPlays} (${totalMinutes}m ${totalSeconds}s)`);
+    console.log(`Currently showing: ${videoNames[currentIntroBgIndex]}`);
+  };
+
+  // Start all intro background videos playing
+  introBgVideos.forEach((video, index) => {
+    if (video) {
+      video.play().catch(e => console.log('Intro bg video autoplay failed:', e));
+      // Set initial opacity
+      if (index === 0) {
+        video.style.opacity = '1';
+        videoPlayCounts[0] = 1; // Count initial play
+        displayPlaybackStats();
+      } else {
+        video.style.opacity = '0';
+      }
+    }
+  });
+
+  // Function to switch to next intro bg video
+  const switchIntroBgVideo = () => {
+    const currentVideo = introBgVideos[currentIntroBgIndex];
+    const nextIndex = (currentIntroBgIndex + 1) % introBgVideos.length;
+    const nextVideo = introBgVideos[nextIndex];
+
+    if (currentVideo && nextVideo) {
+      // Fade out current video
+      currentVideo.style.opacity = '0';
+
+      // Fade in next video
+      nextVideo.style.opacity = '1';
+
+      currentIntroBgIndex = nextIndex;
+      videoPlayCounts[nextIndex]++; // Increment play count
+      displayPlaybackStats(); // Show updated stats
+    }
+  };
+
+  // Rotate intro background videos every 5 seconds
+  setInterval(switchIntroBgVideo, 5000);
+
+  // Also add a way to check stats on demand
+  window.checkVideoStats = displayPlaybackStats;
+
+  // Add scroll-based darkening effect
+  const introVideoContainer = document.querySelector('.intro-video-container');
+  const darkOverlay = document.createElement('div');
+  darkOverlay.style.cssText = `
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100vw;
+    height: calc(100vh + 2px);
+    background: black;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.1s ease;
+  `;
+
+  // Insert the dark overlay after the existing gradient overlay
+  if (introVideoContainer) {
+    const existingOverlay = introVideoContainer.querySelector('div[style*="linear-gradient"]');
+    if (existingOverlay) {
+      existingOverlay.insertAdjacentElement('afterend', darkOverlay);
+    } else {
+      introVideoContainer.appendChild(darkOverlay);
+    }
+
+    // Handle scroll event for darkening and hiding
+    let isHidden = false;
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      // Calculate opacity based on scroll (0 to 100% of window height)
+      // Start darkening immediately and reach full black at 100% scroll
+      const opacity = Math.min(scrollY / windowHeight, 1);
+      darkOverlay.style.opacity = opacity;
+
+      // Hide the entire video container after scrolling past 100% of viewport height
+      if (scrollY >= windowHeight && !isHidden) {
+        introVideoContainer.style.opacity = '0';
+        introVideoContainer.style.visibility = 'hidden';
+        isHidden = true;
+        // Stop videos to save resources
+        introBgVideos.forEach(video => {
+          if (video) video.pause();
+        });
+      } else if (scrollY < windowHeight && isHidden) {
+        // Show again if scrolling back up
+        introVideoContainer.style.opacity = '1';
+        introVideoContainer.style.visibility = 'visible';
+        isHidden = false;
+        // Resume video playback
+        introBgVideos.forEach((video, index) => {
+          if (video) {
+            video.play().catch(e => console.log('Video resume failed:', e));
+          }
+        });
+      }
+    });
+  }
+});
+</script>
+
+</body>
+</html>
