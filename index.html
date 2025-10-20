@@ -1,7 +1,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Favicon -->
-<link rel="icon" type="image/png" href="./src/img/panda.png">
+<link rel="icon" type="image/png" href="./src/img/fanqie.png">
 
 <!-- Title -->
 <title>MoGA</title>
@@ -237,31 +237,31 @@
   <div class="authors-modern-container">
     <div class="authors-modern-row">
       <a href="https://scholar.google.com/citations?user=aiY4v3oAAAAJ&hl=en" class="author-modern-link">
-        <span class="author-name-modern">Weinan Jia</span> 
+        <span class="author-name-modern">Weinan Jia<sup>1</sup></span>
       </a>
       <a href="https://scholar.google.com/citations?hl=zh-CN&user=9YBKORgAAAAJ" class="author-modern-link">
-        <span class="author-name-modern">Yuning Lu</span>
+        <span class="author-name-modern">Yuning Lu<sup>2</sup></span>
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Mengqi Huang</span> 
+        <span class="author-name-modern">Mengqi Huang<sup>1</sup></span> 
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Hualiang Wang</span> 
+        <span class="author-name-modern">Hualiang Wang<sup>3</sup></span> 
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Binyuan Huang</span>
+        <span class="author-name-modern">Binyuan Huang<sup>4</sup></span>
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Nan Chen</span>
+        <span class="author-name-modern">Nan Chen<sup>1</sup></span>
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Mu Liu</span>
+        <span class="author-name-modern">Mu Liu<sup>2</sup></span>
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Jidong Jiang</span>
+        <span class="author-name-modern">Jidong Jiang<sup>2</sup></span>
       </a>
       <a href="#" class="author-modern-link">
-        <span class="author-name-modern">Zhendong Mao</span>
+        <span class="author-name-modern">Zhendong Mao<sup>1</sup></span>
       </a>
     </div>
   </div>
@@ -270,7 +270,7 @@
   <div class="institutions-modern">
     <div class="institution-item-modern">
       <!-- <span class="institution-number-modern"><sup>1</sup></span> -->
-      <span class="institution-name-modern">USTC, ByteDance Fanqie</span>
+      <span class="institution-name-modern"><sup>1</sup>University of Science and Technology of China, <sup>2</sup>ByteDance Fanqie China, <sup>3</sup>Hong Kong University of Science and Technology, <sup>4</sup>Wuhan University</span>
     </div>
   </div>
 
@@ -315,26 +315,197 @@
           Building on MoGA, we develop an efficient long video generation model that end-to-end produces ⚡ <span style="background: linear-gradient(90deg, #ff512f, #dd2476); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700;"> minute-level, multi-shot, 480p videos at 24 FPS with approximately 580K context length</span>. 
           Comprehensive experiments on various video generation tasks validate the effectiveness of our approach.
         </p>
-       
+
+      <div style="margin: 30px auto; max-width: 1200px; position: relative;">
+        <style>
+          .row {
+            display: flex;
+            gap: 20px;
+            justify-content: center; /* 不从中心均分，按实际宽度自然排列 */
+            align-items: flex-start;
+            flex-wrap: wrap;             /* 窄屏可换行 */
+          }
+          .video-card {
+            /* 关键：不再用 flex:1 均分，让宽度由内容决定 */
+            flex: 0 0 auto;
+            max-width: 100%;
+          }
+          .video-frame {
+            position: relative;
+            /* 宽高由脚本按比例/高度同步控制 */
+            border-radius: 10px;
+            overflow: hidden;
+            background: #000; /* 防止任何白底闪现 */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          }
+          .video-frame > video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* 不裁剪，完整显示 */
+          }
+          .caption {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 0.9rem;
+          }
+          /* 小屏时允许上下堆叠，间距一致 */
+          @media (max-width: 840px) {
+            .row {
+              justify-content: center;
+            }
+          }
+        </style>
+
+        <div class="row" id="video-row">
+          <div class="video-card" data-label="case-1">
+            <div class="video-frame">
+              <video autoplay muted loop controls playsinline>
+                <source src="./src/videos/MoGA_video/1min_video/1min_case1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="caption">case 1</p>
+          </div>
+
+          <div class="video-card" data-label="case-2">
+            <div class="video-frame">
+              <video autoplay muted loop controls playsinline>
+                <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p class="caption">case 2</p>
+          </div>
+        </div>
+
+        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Examples</h5>
+
+        <script>
+          function measureHeight(el) {
+            return el.getBoundingClientRect().height;
+          }
+          function setAspect(frame, ratio) {
+            frame.style.aspectRatio = String(ratio);
+            frame.style.width = '';   // 先让宽度由布局决定
+            frame.style.height = '';  // 初始仅通过 aspect-ratio 控制高度
+          }
+          function lockHeight(frame, ratio, heightPx) {
+            frame.style.aspectRatio = String(ratio);
+            frame.style.height = heightPx + 'px';
+            frame.style.width = ''; // 宽度由 aspect-ratio 和 height 推导，非对称自然占位
+          }
+
+          function initAdaptive() {
+            const cards = Array.from(document.querySelectorAll('.video-card'));
+            const items = cards.map(c => {
+              const frame = c.querySelector('.video-frame');
+              const video = c.querySelector('video');
+              return { card: c, frame, video, w0: 0, h0: 0, ratio: 1 };
+            });
+
+            let ready = 0;
+            const onMeta = () => {
+              ready++;
+              if (ready < items.length) return;
+
+              // 计算固有比例
+              items.forEach(it => {
+                it.w0 = it.video.videoWidth || 1;
+                it.h0 = it.video.videoHeight || 1;
+                it.ratio = it.w0 / it.h0;
+              });
+
+              // 找出横屏作为基准（若都为竖或都为横，则任选一个）
+              const horiz = items.find(i => i.ratio >= 1) || items[0];
+              const vert  = items.find(i => i.ratio < 1 && i !== horiz);
+
+              // 第一步：全部按自身比例渲染
+              items.forEach(i => setAspect(i.frame, i.ratio));
+
+              // 等一帧布局稳定
+              requestAnimationFrame(() => {
+                // 横屏高度由其容器宽度和比例决定
+                const baseH = measureHeight(horiz.frame);
+
+                if (vert) {
+                  // 锁定竖屏为与横屏同高，宽度按其比例推导
+                  lockHeight(vert.frame, vert.ratio, baseH);
+                }
+
+                // 横屏保持“仅按比例”，不强制 height，避免白框
+                setAspect(horiz.frame, horiz.ratio);
+
+                // 监听 resize，重新计算
+                let raf = null;
+                const onResize = () => {
+                  if (raf) cancelAnimationFrame(raf);
+
+                  // 恢复为按比例布局，便于重新测量横屏高度
+                  items.forEach(i => setAspect(i.frame, i.ratio));
+
+                  raf = requestAnimationFrame(() => {
+                    const newH = measureHeight(horiz.frame);
+                    if (vert) lockHeight(vert.frame, vert.ratio, newH);
+                    // 横屏依然按比例
+                    setAspect(horiz.frame, horiz.ratio);
+                  });
+                };
+                window.addEventListener('resize', onResize);
+              });
+            };
+
+            items.forEach(i => {
+              if (i.video.readyState >= 1) onMeta();
+              else i.video.addEventListener('loadedmetadata', onMeta, { once: true });
+            });
+          }
+
+          initAdaptive();
+        </script>
+      </div>
      
       <div style="margin: 30px auto; max-width: 1200px; position: relative;">
-        <div style="display: flex; gap: 20px; justify-content: center;">
+        <style>
+          /* 修改3：新增样式，统一等高与自适应 */
+          .video-frame {
+            position: relative;
+            width: 100%;
+            height: 380px;           /* 统一视觉高度，可按需调整 */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: #111;
+          }
+          @media (max-width: 700px) {
+            .video-frame { height: 300px; }
+          }
+          @media (max-width: 380px) {
+            .video-frame { height: 240px; }
+          }
+        </style>
+
+        <!-- <div style="display: flex; gap: 20px; justify-content: center;">
           <div class="video-wrapper" style="flex: 1; max-width: 500px;">
-            <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-              <source src="./src/videos/MoGA_video/30s_video/30s_case1.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
+            <div class="video-frame">
+              <video autoplay muted loop controls style="height: 100%; width: 100%; object-fit: contain;  border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                <source src="./src/videos/MoGA_video/1min_video/1min_case1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
             <p style="text-align: center; margin-top: 10px; color: white; font-size: 0.9rem;">case 1</p>
           </div>
           <div class="video-wrapper" style="flex: 1; max-width: 500px;">
             <video autoplay muted loop controls style="width: 100%; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-              <source src="./src/videos/MoGA_video/30s_video/30s_case2.mp4" type="video/mp4">
+              <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <p style="text-align: center; margin-top: 10px; color: white; font-size: 0.9rem;">case 2</p>
           </div>
         </div>
-        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Examples</h5>
+        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Examples</h5> -->
       </div>
     </div>
 
@@ -349,7 +520,7 @@
 
     <!-- Main Question Box -->
     <div style="max-width: 1400px; margin: auto; position: relative;">
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 3px; border-radius: 25px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);">
+    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 0px; border-radius: 25px; box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);">
       <div style="background: #0a0a0a; border-radius: 22px; padding: 0px; text-align: center; position: relative; overflow: hidden;">
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1), transparent 50%), radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1), transparent 50%); pointer-events: none;"></div>
 
@@ -430,7 +601,8 @@
 
     .more-results-grid .video-wrapper video {
       width: 100%;
-      height: auto;
+      /* height: auto; */
+      object-fit: contain;
       display: block;
     }
 
@@ -457,6 +629,11 @@
     <div class="video-wrapper">
       <video autoplay muted loop playsinline controls>
         <source src="./src/videos/MoGA_video/30s_video/30s_case3.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/30s_video/30s_case2.mp4" type="video/mp4">
       </video>
     </div>
     <div class="video-wrapper">
