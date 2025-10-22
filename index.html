@@ -270,23 +270,23 @@
   <div class="institutions-modern">
     <div class="institution-item-modern">
       <!-- <span class="institution-number-modern"><sup>1</sup></span> -->
-      <span class="institution-name-modern"><sup>1</sup>University of Science and Technology of China, <sup>2</sup>ByteDance Fanqie China, <sup>3</sup>Hong Kong University of Science and Technology, <sup>4</sup>Wuhan University</span>
+      <span class="institution-name-modern"><sup>1</sup>University of Science and Technology of China, <sup>2</sup>FanqieAI, ByteDance China, <sup>3</sup>Hong Kong University of Science and Technology, <sup>4</sup>Wuhan University</span>
     </div>
   </div>
 
   <!-- Modern buttons section -->
   <div class="buttons-modern">
-    <a target="_blank" href="https://arxiv.org/pdf/2504.09454" class="button-modern button-paper">
+    <a target="_blank" href="https://arxiv.org/pdf/2510.18692" class="button-modern button-paper">
       <img src="./src/img/th.png" alt="arXiv" class="button-icon arxiv-icon" style="width: 20px; height:15px;">
       <span>arXiv</span>
     </a>
-    <a target="_blank" href="https://github.com/jiawn-creator/MoGA" class="button-modern button-code">
+    <a target="_blank" href="#" class="button-modern button-code">
       <img src="./src/img/github.png" alt="GitHub" class="button-icon" style="width: 20px; height: 20px;">
-      <span>Code</span>
+      <span>Code(Coming Soon)</span>
     </a>
     <a href="#" target="_blank" class="button-modern button-video">
-      <img src="./src/img/youtube.png" alt="YouTube" class="button-icon" style="width: 20px; height: 20px;">
-      <span>Video</span>
+      <img src="./src/img/hf_fig.svg" alt="Huggingface" class="button-icon" style="width: 20px; height: 20px;">
+      <span>Model(Coming Soon)</span>
     </a>
   </div>
 
@@ -367,21 +367,12 @@
                 Your browser does not support the video tag.
               </video>
             </div>
-            <p class="caption">case 1</p>
+            <!-- <p class="caption">case 1</p> -->
           </div>
 
-          <div class="video-card" data-label="case-2">
-            <div class="video-frame">
-              <video autoplay muted loop controls playsinline>
-                <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <p class="caption">case 2</p>
-          </div>
         </div>
 
-        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Examples</h5>
+        <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-level Multi-shot Long Video Example</h5>
 
         <script>
           function measureHeight(el) {
@@ -625,7 +616,13 @@
     }
   </style>
 
+
   <div class="more-results-grid">
+    <div class="video-wrapper">
+      <video autoplay muted loop playsinline controls>
+        <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="video-wrapper">
       <video autoplay muted loop playsinline controls>
         <source src="./src/videos/MoGA_video/30s_video/30s_case3.mp4" type="video/mp4">
@@ -666,11 +663,11 @@
         <source src="./src/videos/MoGA_video/10s_video/10s_case5.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="video-wrapper">
+    <!-- <div class="video-wrapper">
       <video autoplay muted loop playsinline controls>
         <source src="./src/videos/MoGA_video/10s_video/10s_case6.mp4" type="video/mp4">
       </video>
-    </div>
+    </div> -->
     <div class="video-wrapper">
       <video autoplay muted loop playsinline controls>
         <source src="./src/videos/MoGA_video/10s_video/10s_case7.mp4" type="video/mp4">
@@ -697,13 +694,14 @@
   <div style="position: relative; max-width: 1200px; width: 100%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); padding: 30px; border-radius: 20px; border: 2px solid rgba(102, 126, 234, 0.5); box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2), inset 0 0 20px rgba(102, 126, 234, 0.05); backdrop-filter: blur(10px);">
     <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #667eea, #764ba2); padding: 8px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase;">BibTeX</div>
     <pre style="background: none; padding: 0; margin: 0; font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace; font-size: 15px; color: #e0e0e0; line-height: 1.6; text-shadow: 0 0 10px rgba(102, 126, 234, 0.3);">@article{----,
-  title   = {----},
-  author  = {----}, 
-  year    = {2025}
-  eprint       = {----},
+  title        = {MoGA: Mixture-of-Groups Attention for End-to-End Long Video Generation},
+  author       = {Weinan Jia and Yuning Lu and Mengqi Huang and Hualiang Wang and Binyuan Huang and Nan Chen and Mu Liu and Jidong Jiang and Zhendong Mao}, 
+  year         = {2025}
+  eprint       = {2510.18692},
   archivePrefix= {arXiv},
   primaryClass = {cs.CV},
-  note         = {arXiv preprint}
+  note         = {arXiv preprint},
+  url          = {https://arxiv.org/abs/2510.18692}, 
 }</pre>
     <button onclick="navigator.clipboard.writeText('@article{----,\\n  title={----},\\n  author={----},\\n  journal={},\\n  year={2025}\\n}')" style="position: absolute; top: 20px; right: 20px; background: rgba(102, 126, 234, 0.2); border: 1px solid rgba(102, 126, 234, 0.4); color: white; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 12px; transition: all 0.3s ease; font-weight: 500;" onmouseover="this.style.background='rgba(102, 126, 234, 0.4)'" onmouseout="this.style.background='rgba(102, 126, 234, 0.2)'">📋 Copy</button>
   </div>
