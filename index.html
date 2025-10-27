@@ -559,7 +559,6 @@
 </div>
    
 
-
 <!------------- More Results ------------------>
 <div class="more-results-section" style="display: flex; flex-direction: column; align-items: center; padding: 60px 20px; width: 100%; box-sizing: border-box; margin-top: 80px;">
   <h2 class="fancy-title" style="color: white; background: none !important; -webkit-text-fill-color: white !important; font-size: 48px; text-align: center; margin-bottom: 40px; font-weight: 700; letter-spacing: 2px;">
@@ -570,151 +569,182 @@
   <div style="position: relative; max-width: 1800px; width: 100%; background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1)); padding: 40px; border-radius: 25px; border: 2px solid rgba(255, 107, 107, 0.5); box-shadow: 0 20px 60px rgba(255, 107, 107, 0.2), inset 0 0 20px rgba(78, 205, 196, 0.05); backdrop-filter: blur(10px);">
     <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #ff6b6b, #4ecdc4); padding: 8px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase;">Gallery</div>
 
-  <style>
-    /* Sparkle emoji animation */
-    .sparkle-emoji {
-      display: inline-block;
-      background: linear-gradient(45deg, #ffd700, #ffed4b, #ffc700, #ffed4b, #ffd700);
-      background-size: 300% 300%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: sparkleGradient 2s ease infinite, sparkleRotate 3s linear infinite;
-      font-size: 26px;
-      filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
-    }
+    <style>
+      /* Sparkle emoji animation */
+      .sparkle-emoji {
+        display: inline-block;
+        background: linear-gradient(45deg, #ffd700, #ffed4b, #ffc700, #ffed4b, #ffd700);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: sparkleGradient 2s ease infinite, sparkleRotate 3s linear infinite;
+        font-size: 26px;
+        filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+      }
 
-    @keyframes sparkleGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+      @keyframes sparkleGradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
 
-    @keyframes sparkleRotate {
-      0% { transform: rotate(0deg) scale(1); }
-      25% { transform: rotate(15deg) scale(1.2); }
-      50% { transform: rotate(0deg) scale(1); }
-      75% { transform: rotate(-15deg) scale(1.2); }
-      100% { transform: rotate(0deg) scale(1); }
-    }
+      @keyframes sparkleRotate {
+        0% { transform: rotate(0deg) scale(1); }
+        25% { transform: rotate(15deg) scale(1.2); }
+        50% { transform: rotate(0deg) scale(1); }
+        75% { transform: rotate(-15deg) scale(1.2); }
+        100% { transform: rotate(0deg) scale(1); }
+      }
 
-    .more-results-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .more-results-grid .video-wrapper {
-      position: relative;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .more-results-grid .video-wrapper:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .more-results-grid .video-wrapper video {
-      width: 100%;
-      /* height: auto; */
-      object-fit: contain;
-      display: block;
-    }
-
-    @media (max-width: 1400px) {
       .more-results-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 1800px;
+        margin: 40px auto;
+        padding: 0 20px;
       }
-    }
 
-    @media (max-width: 900px) {
-      .more-results-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .more-results-grid .video-wrapper {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        background: #000; /* 防止加载或比例不一致时出现白边 */
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        aspect-ratio: 16 / 9; /* 可根据你的视频主流比例调整或移除 */
       }
-    }
 
-    @media (max-width: 600px) {
-      .more-results-grid {
-        grid-template-columns: 1fr;
+      .more-results-grid .video-wrapper:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
-    }
-  </style>
 
+      .more-results-grid .video-wrapper video {
+        width: 100%;
+        height: 100%;         /* 关键：让视频填满容器的高度 */
+        object-fit: cover;    /* 关键：裁剪以消除上下白边 */
+        display: block;
+        background: #000;     /* 某些浏览器会显示video背景色，设置为黑色避免白边 */
+      }
 
-  <div class="more-results-grid">
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/30s_video/30s_case3.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/30s_video/30s_case2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/30s_video/30s_case4.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case1.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case2.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case3.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case4.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case5.mp4" type="video/mp4">
-      </video>
-    </div>
-    <!-- <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case6.mp4" type="video/mp4">
-      </video>
-    </div> -->
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case7.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case8.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="video-wrapper">
-      <video autoplay muted loop playsinline controls>
-        <source src="./src/videos/MoGA_video/10s_video/10s_case9.mp4" type="video/mp4">
-      </video>
+      @media (max-width: 1400px) {
+        .more-results-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .more-results-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .more-results-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <div class="more-results-grid">
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case8.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case9.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/30s_video/30s_case4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case4.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case5.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case8.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case9.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
   </div>
-  </div>
-</div>
+
+  
+
+
 
 
 <!------------- Citation ------------------>
