@@ -324,6 +324,7 @@
             justify-content: center; /* 不从中心均分，按实际宽度自然排列 */
             align-items: flex-start;
             flex-wrap: wrap;             /* 窄屏可换行 */
+            margin-bottom: 20px; /* 新增：两行容器之间的垂直间距 */
           }
           .video-card {
             /* 关键：不再用 flex:1 均分，让宽度由内容决定 */
@@ -361,45 +362,49 @@
 
         <div class="row" id="video-row">
           
-          <div class="video-card" data-label="case-1">
+          <div class="video-card" data-label="case-3">
             <div class="video-frame">
               <video autoplay muted loop controls playsinline>
                 <source src="./src/videos/MoGA_video/1min_video/1min_case1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
-            <!-- <p class="caption">case 1</p> -->
+            <!-- <p class="caption">case 3</p> -->
           </div>
-          
-          <div class="video-card" data-label="case-2">
+
+          <div class="video-card" data-label="case-1">
             <div class="video-frame">
               <video autoplay muted loop controls playsinline>
                 <source src="./src/videos/MoGA_video/1min_video/1min_case3.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
-            <!-- <p class="caption">case 2</p> -->
-            </div>
-          
-          <div class="video-card" data-label="case-3">
+            <!-- <p class="caption">case 1</p> -->
+          </div>
+
+          <div class="video-card" data-label="case-2">
             <div class="video-frame">
               <video autoplay muted loop controls playsinline>
                 <source src="./src/videos/MoGA_video/1min_video/1min_case4.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
-            <!-- <p class="caption">case 3</p> -->
-          </div>
+            <!-- <p class="caption">case 2</p> -->
+            </div>
+
           <div class="video-card" data-label="case-4">
             <div class="video-frame">
               <video autoplay muted loop controls playsinline>
-                <source src="./src/videos/MoGA_video/1min_video/1min_case5.mp4" type="video/mp4">
+                <source src="./src/videos/MoGA_video/1min_video/1min_case6.mp4" type="video/mp4">
                 Your browser does not support the video tag.
               </video>
             </div>
             <!-- <p class="caption">case 5</p> -->
             </div>
-          
+        <!-- </div> -->
+
+
+
          </div>
         <h5 style="text-align: center; color: #f7f7f7; margin-bottom: 20px;">Minute-Level Multi-Shot Long Video Examples (Film Remakes)</h5>
 
@@ -678,6 +683,16 @@
           <source src="./src/videos/MoGA_video/30s_video/30s_case8.mp4" type="video/mp4">
         </video>
       </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/1min_video/1min_case7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/1min_video/1min_case8.mp4" type="video/mp4">
+        </video>
+      </div>
     </div>
 
     <!-- 后续行：3列，常规比例 -->
@@ -689,12 +704,12 @@
       </div>
       <div class="video-wrapper">
         <video autoplay muted loop playsinline controls>
-          <source src="./src/videos/MoGA_video/30s_video/30s_case10.mp4" type="video/mp4">
+          <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-wrapper">
         <video autoplay muted loop playsinline controls>
-          <source src="./src/videos/MoGA_video/1min_video/1min_case2.mp4" type="video/mp4">
+          <source src="./src/videos/MoGA_video/1min_video/1min_case5.mp4" type="video/mp4">
         </video>
       </div>
       <div class="video-wrapper">
@@ -757,6 +772,11 @@
           <source src="./src/videos/MoGA_video/10s_video/10s_case9.mp4" type="video/mp4">
         </video>
       </div>
+      <!-- <div class="video-wrapper">
+        <video autoplay muted loop playsinline controls>
+          <source src="./src/videos/MoGA_video/10s_video/10s_case10.mp4" type="video/mp4">
+        </video>
+      </div> -->
     </div>
   </div>
 </div>
@@ -782,6 +802,19 @@
   </div>
   <p style="margin-top: 30px; color: rgba(255, 255, 255, 0.7); font-size: 16px; text-align: center; max-width: 600px;">If you find our work useful in your research, please consider citing our paper.</p>
 </div>
+
+<!------------- Ethics Concerns ------------------>
+<div class="content" style="display: flex; flex-direction: column; align-items: center; padding: 60px 20px;">
+  <div style="position: relative; max-width: 1200px; width: 100%; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1)); padding: 30px; border-radius: 20px; border: 2px solid rgba(208, 234, 102, 0.5); box-shadow: 0 10px 40px rgba(102, 234, 124, 0.2), inset 0 0 20px rgba(102, 126, 234, 0.05); backdrop-filter: blur(10px);">
+    <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(90deg, #b7ea66, #4ba25b); padding: 8px 24px; border-radius: 20px; font-size: 12px; font-weight: 600; color: white; letter-spacing: 1px; text-transform: uppercase;">Ethics Concerns</div>
+    <div style="background: none; padding: 0; margin: 0; font-family: 'JetBrains Mono', 'Fira Code', 'Monaco', monospace; font-size: 15px; color: #e0e0e0; line-height: 1.6; text-shadow: 0 0 10px rgba(102, 126, 234, 0.3);">
+    The videos in these demos are  generated by models, and are intended solely to showcase the capabilities of this research. If you have any concerns, please contact us at luyuning@bytedance.com, and we will promptly remove them.
+    </div>
+</div>
+</div>
+
+
+
 
 <script>
 // Hero video code removed - hero videos are no longer displayed
